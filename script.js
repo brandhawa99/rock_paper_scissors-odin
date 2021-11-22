@@ -1,7 +1,7 @@
 
 //GETS COMPUTERS MOVE
 function computerMove(){
-    let plays = ["Rock","Paper","Scissors"]
+    let plays = ["rock","paper","scissors"]
     return plays[Math.floor(Math.random()*3)];
 }
 
@@ -9,42 +9,37 @@ function computerMove(){
 
 function humanMove(){
     let pMove = window.prompt("Choose Rock, Paper or Scissors");
-    pMove.toLowerCase()
-    pMove = pMove.slice(0,0)
+    pMove.toLowerCase().trim()
     return pMove;
 }
 
 
+
 //Play 1 Round Of the Game
 function playRound(human , comp){
-    
-    if (human != "r" || human != "p" || human != "s"){
-        return("Invalid Move!!!")
+    if(human != "rock" || human != "paper" || human != "scissors"){
+        return "Invalid Move";
     }
-    if(human == "r" &&comp == "Scissors"){
-        return("You Win Rock Beats Scissors")
-    }
-    if(human == "p" && comp == "Rock"){
-        return("You Win Paper Beats Rock")
 
+    if(human == "rock" && comp == "scissors"){
+        return `You Win ${human} beats ${comp}`;
     }
-    if(human == "s" && comp == "Paper"){
-        return("You Win Scissors Beats Paper")
 
-    }else {
-        let c;
-        if(human === "r"){
-            let c = "Rock"
-        }
-        if(human === "p"){
-            let c = "Paper"
-        }
-        if(human === "s"){
-            let c = "Scissors"
-        }
-        return(`Computer Wins ${comp} beats ${c}`)
-
+    if(human == "paper" && comp == "rock"){
+        return `You Win ${human} beats ${comp}`;
     }
+
+    if(human == "scissors" && comp == "rock"){
+        return `You Win ${human} beats ${comp}`;
+    }
+
+    if(human == comp){
+        return `Tie you both chose ${comp} `
+    }
+
+    return`Computer Wins ${comp} beats ${human}`
+
+
 
 }
 
