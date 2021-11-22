@@ -17,9 +17,6 @@ function humanMove(){
 
 //Play 1 Round Of the Game
 function playRound(human , comp){
-    if(human != "rock" || human != "paper" || human != "scissors"){
-        return "Invalid Move";
-    }
 
     if(human == "rock" && comp == "scissors"){
         return `You Win ${human} beats ${comp}`;
@@ -36,6 +33,7 @@ function playRound(human , comp){
     if(human == comp){
         return `Tie you both chose ${comp} `
     }
+    
 
     return`Computer Wins ${comp} beats ${human}`
 
