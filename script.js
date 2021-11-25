@@ -1,3 +1,25 @@
+//Get elements; 
+
+//Scoring Elements
+const human_score = document.querySelector('.human-score');
+const computer_score = document.querySelector('computer-score');
+
+
+//Move elements
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+
+//Text Area
+const text_area = document.querySelector('.text-area');
+
+//Score and rounds
+let h_score = 0; 
+let c_score = 0; 
+let round = 1; 
+
+
+
 
 //GETS COMPUTERS MOVE
 function computerMove(){
@@ -7,11 +29,34 @@ function computerMove(){
 
 //GET HUMAN MOVEE
 
-function humanMove(){
-    // let pMove = window.prompt("Choose Rock, Paper or Scissors");
-    pMove.toLowerCase().trim()
-    return pMove;
+rock.addEventListener('click', () =>{
+    let result = playRound('rock',computerMove()); 
+    result 
+    if(result.slice(0,3)=='You'){
+        h_score++; 
+        round++; 
+    }
+    if(res){
+        
+    }
+
+
+})
+
+//updateItems()
+function updateNumber(result){
+    let result = result.slice(0,3)
+    if(result == 'You'){
+        h_score++; 
+        round++; 
+        human_score.innerHTML = h_score; 
+        
+
+        
+    }
 }
+
+
 
 
 
@@ -36,9 +81,6 @@ function playRound(human , comp){
     
 
     return`Computer Wins ${comp} beats ${human}`
-
-
-
 }
 
 
