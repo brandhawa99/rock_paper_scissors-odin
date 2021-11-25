@@ -8,7 +8,7 @@ function computerMove(){
 //GET HUMAN MOVEE
 
 function humanMove(){
-    let pMove = window.prompt("Choose Rock, Paper or Scissors");
+    // let pMove = window.prompt("Choose Rock, Paper or Scissors");
     pMove.toLowerCase().trim()
     return pMove;
 }
